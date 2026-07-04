@@ -1,0 +1,19 @@
+
+> agentic-knowledge-ui@1.0.0 dev
+> vite --host localhost --port 5173 --strictPort --host localhost --port 5173 --strictPort
+
+
+  [32m[1mVITE[22m v7.3.5[39m  [2mready in [0m[1m514[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+[2m12:00:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ new dependencies optimized: [33m@mui/icons-material/MemoryOutlined, @mui/icons-material/AddCommentOutlined, @mui/icons-material/StarOutlined, @mui/icons-material/AddOutlined[32m[39m
+[2m12:00:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ optimized dependencies changed. reloading[39m
+[2m12:09:43 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/layout/AppLayout.tsx[22m
+[2m12:09:43 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.tsx[22m
+[2m12:09:44 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ new dependencies optimized: [33m@mui/icons-material/TravelExploreOutlined[32m[39m
+[2m12:09:44 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ optimized dependencies changed. reloading[39m
+[2m1:46:22 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/ChatAssistantPage.tsx[22m
+[2m1:46:22 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/ChatAssistantPage.tsx[22m
+[2m1:48:33 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/ChatAssistantPage.tsx[22m
+[2m1:48:33 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/ChatAssistantPage.tsx[22m
+[2m3:36:31 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/SettingsPage.tsx[22m

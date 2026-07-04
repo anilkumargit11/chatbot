@@ -1,0 +1,119 @@
+Using launch settings from D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.API\Properties\launchSettings.json...
+[15:38:02 INF] Start processing HTTP request POST http://172.22.8.113:8080/v1/chat/completions
+[15:38:02 INF] Sending HTTP request POST http://172.22.8.113:8080/v1/chat/completions
+[15:38:05 WRN] AI provider health check failed. Provider=Local Llama
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (172.22.8.113:8080)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AgenticKnowledgeAssistant.BAL.AIProviders.OpenAIProvider.PostChatCompletionAsync(HttpClient client, String path, Object payload, CancellationToken cancellationToken) in D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.Application\Services\AIProviders\OpenAIProvider.cs:line 61
+   at AgenticKnowledgeAssistant.BAL.AIProviders.LocalLlamaProvider.GenerateChatCompletionAsync(String prompt, CancellationToken cancellationToken) in D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.Application\Services\AIProviders\LocalLlamaProvider.cs:line 54
+   at AgenticKnowledgeAssistant.BAL.AIProviderHealthService.CheckHealthAsync(CancellationToken cancellationToken) in D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.Application\Services\AIProviderHealthService.cs:line 60
+[15:38:06 INF] Conversation created. SessionGuid=d5b0f272-3c16-4851-b60c-109c8b97ad8a UserId=1
+[15:38:06 INF] Conversation context built. SessionGuid=d5b0f272-3c16-4851-b60c-109c8b97ad8a UserId=1 Messages=0
+[15:38:06 INF] Skipping AI provider Azure OpenAI: not configured or not enabled for auto-detection.
+[15:38:06 INF] Skipping AI provider OpenAI: not configured or not enabled for auto-detection.
+[15:38:06 INF] Skipping AI provider Ollama: not configured or not enabled for auto-detection.
+[15:38:06 INF] Skipping AI provider LM Studio: not configured or not enabled for auto-detection.
+[15:38:06 INF] Skipping AI provider Azure AI Foundry: not configured or not enabled for auto-detection.
+[15:38:06 INF] Start processing HTTP request POST http://172.22.8.113:8080/v1/chat/completions
+[15:38:06 INF] Sending HTTP request POST http://172.22.8.113:8080/v1/chat/completions
+[15:38:08 ERR] AI provider Local Llama failed. Trying next provider.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (172.22.8.113:8080)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AgenticKnowledgeAssistant.BAL.AIProviders.OpenAIProvider.PostChatCompletionAsync(HttpClient client, String path, Object payload, CancellationToken cancellationToken) in D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.Application\Services\AIProviders\OpenAIProvider.cs:line 61
+   at AgenticKnowledgeAssistant.BAL.AIProviders.LocalLlamaProvider.GenerateChatCompletionAsync(String prompt, CancellationToken cancellationToken) in D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.Application\Services\AIProviders\LocalLlamaProvider.cs:line 54
+   at AgenticKnowledgeAssistant.BAL.AgentBAL.GenerateResponseAsync(String prompt, CancellationToken cancellationToken) in D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.Application\Services\AgentBAL.cs:line 891
+[15:38:08 WRN] All AI providers failed or were unavailable. Checked providers: Azure OpenAI, OpenAI, Ollama, LM Studio, Azure AI Foundry, Local Llama
+[15:38:08 INF] Conversation messages saved. SessionGuid=d5b0f272-3c16-4851-b60c-109c8b97ad8a UserId=1
+[15:38:08 INF] /api/chat | Step 1 | Starting Chat BAL calling - Request - Response: {"Question":"hi good morning","CountryCode":"","CurrencyCode":"","LanguageCode":"","Mode":"SmartAuto","SessionGuid":"9dfff03b-5da2-4ae3-a894-8ebd28bc5857","AttachmentBase64":null,"AttachmentName":null,"Attachments":[],"TargetLanguage":"en","UserId":1}
+[15:38:08 INF] /api/chat | Step 2 | Ending Chat BAL calling - Response - Response: {"ReturnCode":200,"ReturnMessage":"success","ResponseTime":"2965","data":{"Answer":"General AI is currently unavailable because no AI provider is configured or reachable. Please configure an AI provider in Settings or try again later.","SessionGuid":"d5b0f272-3c16-4851-b60c-109c8b97ad8a","Sources":[],"ToolUsed":"OpenAiDirectResponse","StructuredData":null,"ConfidenceScore":0.92,"ResponseTimeMs":2086,"PromptTokens":116,"CompletionTokens":37,"TotalTokens":153,"DetectedLanguage":"en","TranslatedAnswer":null},"Headers":null,"success":true,"message":"success","totalCount":1}
+[15:38:21 INF] Start processing HTTP request POST http://172.22.8.113:8080/v1/chat/completions
+[15:38:21 INF] Sending HTTP request POST http://172.22.8.113:8080/v1/chat/completions
+[15:38:23 WRN] AI provider health check failed. Provider=Local Llama
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (172.22.8.113:8080)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AgenticKnowledgeAssistant.BAL.AIProviders.OpenAIProvider.PostChatCompletionAsync(HttpClient client, String path, Object payload, CancellationToken cancellationToken) in D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.Application\Services\AIProviders\OpenAIProvider.cs:line 61
+   at AgenticKnowledgeAssistant.BAL.AIProviders.LocalLlamaProvider.GenerateChatCompletionAsync(String prompt, CancellationToken cancellationToken) in D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.Application\Services\AIProviders\LocalLlamaProvider.cs:line 54
+   at AgenticKnowledgeAssistant.BAL.AIProviderHealthService.CheckHealthAsync(CancellationToken cancellationToken) in D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.Application\Services\AIProviderHealthService.cs:line 60
+[15:40:47 INF] Conversation created. SessionGuid=63cda384-e463-4448-9766-4b1c9ef15659 UserId=1
+[15:40:47 INF] Conversation context built. SessionGuid=63cda384-e463-4448-9766-4b1c9ef15659 UserId=1 Messages=0
+[15:40:47 INF] Skipping AI provider Azure OpenAI: not configured or not enabled for auto-detection.
+[15:40:47 INF] Skipping AI provider OpenAI: not configured or not enabled for auto-detection.
+[15:40:47 INF] Skipping AI provider Ollama: not configured or not enabled for auto-detection.
+[15:40:47 INF] Skipping AI provider LM Studio: not configured or not enabled for auto-detection.
+[15:40:47 INF] Skipping AI provider Azure AI Foundry: not configured or not enabled for auto-detection.
+[15:40:47 INF] Start processing HTTP request POST http://172.22.8.113:8080/v1/chat/completions
+[15:40:47 INF] Sending HTTP request POST http://172.22.8.113:8080/v1/chat/completions
+[15:40:49 ERR] AI provider Local Llama failed. Trying next provider.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (172.22.8.113:8080)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AgenticKnowledgeAssistant.BAL.AIProviders.OpenAIProvider.PostChatCompletionAsync(HttpClient client, String path, Object payload, CancellationToken cancellationToken) in D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.Application\Services\AIProviders\OpenAIProvider.cs:line 61
+   at AgenticKnowledgeAssistant.BAL.AIProviders.LocalLlamaProvider.GenerateChatCompletionAsync(String prompt, CancellationToken cancellationToken) in D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.Application\Services\AIProviders\LocalLlamaProvider.cs:line 54
+   at AgenticKnowledgeAssistant.BAL.AgentBAL.GenerateResponseAsync(String prompt, CancellationToken cancellationToken) in D:\AgenticKnowledgeAssi\AgenticKnowledgeAssistant\src\AgenticKnowledgeAssistant.Application\Services\AgentBAL.cs:line 891
+[15:40:49 WRN] All AI providers failed or were unavailable. Checked providers: Azure OpenAI, OpenAI, Ollama, LM Studio, Azure AI Foundry, Local Llama
+[15:40:49 INF] Conversation messages saved. SessionGuid=63cda384-e463-4448-9766-4b1c9ef15659 UserId=1
+[15:40:49 INF] /api/chat | Step 1 | Starting Chat BAL calling - Request - Response: {"Question":"who is Telangana Chief Minister ?","CountryCode":"","CurrencyCode":"","LanguageCode":"","Mode":"SmartAuto","SessionGuid":"6acf441b-cbe8-4226-b5c1-ee82705c31f4","AttachmentBase64":null,"AttachmentName":null,"Attachments":[],"TargetLanguage":"en","UserId":1}
+[15:40:49 INF] /api/chat | Step 2 | Ending Chat BAL calling - Response - Response: {"ReturnCode":200,"ReturnMessage":"success","ResponseTime":"2239","data":{"Answer":"General AI is currently unavailable because no AI provider is configured or reachable. Please configure an AI provider in Settings or try again later.","SessionGuid":"63cda384-e463-4448-9766-4b1c9ef15659","Sources":[],"ToolUsed":"OpenAiDirectResponse","StructuredData":null,"ConfidenceScore":0.92,"ResponseTimeMs":2096,"PromptTokens":121,"CompletionTokens":37,"TotalTokens":158,"DetectedLanguage":"en","TranslatedAnswer":null},"Headers":null,"success":true,"message":"success","totalCount":1}

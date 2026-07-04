@@ -1,0 +1,99 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: agentic-config
+  namespace: default
+data:
+  VITE_API_BASE_URL: "http://agentic-backend-service:8080/api"
+  ConnectionStrings__DefaultConnection: "Server=agentic-db-service;Database=AgenticKnowledgeAssistant;User Id=sa;Password=YourStrong@Password2026;TrustServerCertificate=True;"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agentic-backend-deploy
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: agentic-backend
+  template:
+    metadata:
+      labels:
+        app: agentic-backend
+    spec:
+      containers:
+      - name: backend
+        image: agentic-backend:latest
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: agentic-config
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1Gi
+          requests:
+            cpu: 250m
+            memory: 512Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: agentic-backend-service
+  namespace: default
+spec:
+  selector:
+    app: agentic-backend
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agentic-frontend-deploy
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: agentic-frontend
+  template:
+    metadata:
+      labels:
+        app: agentic-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: agentic-frontend:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 256Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: agentic-frontend-service
+  namespace: default
+spec:
+  selector:
+    app: agentic-frontend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer

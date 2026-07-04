@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: agentic-database
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=YourStrong@Password2026
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql-data:/var/opt/mssql
+    networks:
+      - agentic-network
+
+  backend:
+    image: agentic-backend:latest
+    build:
+      context: ./AgenticKnowledgeAssistant
+      dockerfile: src/AgenticKnowledgeAssistant.API/Dockerfile
+    container_name: agentic-backend
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=database;Database=AgenticKnowledgeAssistant;User Id=sa;Password=YourStrong@Password2026;TrustServerCertificate=True;
+      - JWT__Key=SuperSecretJWTAuthenticationSigningKey2026ForCopilotApplication
+      - JWT__Issuer=AgenticKnowledgeAssistant
+      - JWT__Audience=AgenticKnowledgeAssistant
+      - OpenAI__ApiKey=YourOpenAIApiKeyHere
+    ports:
+      - "5000:8080"
+    depends_on:
+      - database
+    networks:
+      - agentic-network
+
+  frontend:
+    image: agentic-frontend:latest
+    build:
+      context: ./AgenticKnowledgeAssistant/Frontend/agentic-knowledge-ui
+      dockerfile: Dockerfile
+    container_name: agentic-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - agentic-network
+
+volumes:
+  mssql-data:
+
+networks:
+  agentic-network:
+    driver: bridge

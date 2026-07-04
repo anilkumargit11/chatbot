@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Outfit', 'Inter', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+pre {
+  overflow-x: auto;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+code {
+  font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
+}
+
+/* Custom premium scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 102, 241, 0.2) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 999px;
+  transition: all 0.3s;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.3);
+}
+
+.chat-message-row {
+  animation: message-in 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.message-actions {
+  opacity: 0.1;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.chat-message-row:hover .message-actions,
+.chat-message-row:focus-within .message-actions {
+  opacity: 1;
+}
+
+.message-timestamp {
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.chat-message-row:hover .message-timestamp,
+.chat-message-row:focus-within .message-timestamp {
+  opacity: 1;
+}
+
+@keyframes message-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Glassmorphism utility animations */
+.glass-effect {
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
